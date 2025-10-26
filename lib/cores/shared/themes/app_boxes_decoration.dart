@@ -31,4 +31,14 @@ class AppBoxDecoration {
       border: BoxBorder.all(color: Colors.black),
       borderRadius: BorderRadius.circular(12.r)
   );
+
+  static BoxDecoration bottomNavBarItem(int index, int currentIndex) => BoxDecoration(
+    color: currentIndex==index ? AppColors.mainColor : Color(0xffE7EBF7),
+    borderRadius: BorderRadius.circular(100.r),
+  );
+
+  static BoxDecoration clockDigital = BoxDecoration(
+    borderRadius: BorderRadius.circular(20.r),
+    border: Border.all(color: AppColors.mainColor, width: 3.sp)
+  );
 }

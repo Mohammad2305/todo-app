@@ -1,44 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo/cores/shared/constants/app_colors.dart';
+import 'package:todo/cores/shared/themes/app_boxes_decoration.dart';
 import 'package:todo/cores/shared/themes/app_text_styles.dart';
 import '../values/layout_list.dart';
 
-Widget showNavItem({
-  required BuildContext context,
-  required int index,
-  required int currentIndex,
-  required void Function() changeIndex,
-}){
-  if(currentIndex == index){
-    return AnimatedContainer(
-      duration: Duration(seconds: 3),
-      curve: Curves.easeIn,
-      height: 56,
-      width: 175,
-      decoration: BoxDecoration(
-        color: AppColors.mainColor,
-        borderRadius: BorderRadius.circular(100.sp),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(layouts[index].icon, color: Colors.white,),
-          Text(layouts[index].label, style: AppTextStyles.textFtS14FW400Cg.copyWith(color: Colors.white),),
-        ],
+class LayoutNavBarItem extends StatelessWidget {
+  final int index;
+  final int currentIndex;
+  final void Function() changeIndex;
+
+  const LayoutNavBarItem({
+    super.key,
+    required this.index,
+    required this.currentIndex,
+    required this.changeIndex,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        changeIndex();
+      },
+      child: Container(
+        height: 56.h,
+        decoration: AppBoxDecoration.bottomNavBarItem(index, currentIndex),
+        child: AnimatedSize(
+          duration: Duration(seconds: 1),
+          curve: Curves.easeIn,
+          child: SizedBox(
+            width: index == currentIndex ? 175.w : 56.w,
+            child: currentIndex == index
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(layouts[index].icon, color: Colors.white, size: 25.sp,),
+                      Text(
+                        layouts[index].label,
+                        style: AppTextStyles.textFtS14FW400Cg.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  )
+                : Icon(layouts[index].icon, color: Colors.black,size: 25.sp,),
+          ),
+        ),
       ),
     );
-  }
-  else{
-    return InkWell(
-      onTap: (){
-        changeIndex() ;
-      },
-      child: CircleAvatar(
-        backgroundColor: Color(0xffE7EBF7),
-        radius: 40.sp,
-        child: Icon(layouts[index].icon, color: Colors.black,),
-      ),
-    ) ;
   }
 }

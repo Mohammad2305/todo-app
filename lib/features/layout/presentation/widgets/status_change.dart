@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo/cores/shared/themes/app_text_styles.dart';
 import 'package:todo/cores/utils/models/functions/navigators.dart';
 import 'package:todo/cores/utils/models/values/tasks_list.dart';
-import 'package:todo/features/layout/presentation/widgets/tasks_category.dart';
-import '../../../../cores/utils/models/functions/dialog_widget.dart';
+import 'package:todo/features/layout/presentation/widgets/tasks_category_item.dart';
+import '../../../../cores/utils/models/functions/widgets/dialog_widget.dart';
 import '../../data/models/values/categories.dart';
 import 'change_status_success.dart';
 
@@ -33,7 +33,7 @@ class _StatusChangeState extends State<StatusChange> {
             shrinkWrap: true,
             itemCount: categories.length - 1,
             itemBuilder: (context, index) {
-              return TasksCategory(
+              return TasksCategoryItem(
                   index: index,
                   onTap: () {
                     popBack(context);

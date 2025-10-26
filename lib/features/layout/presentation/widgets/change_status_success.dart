@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo/cores/shared/themes/app_boxes_decoration.dart';
 import 'package:todo/cores/shared/themes/app_text_styles.dart';
-import 'package:todo/cores/shared/ui/widgets/custom_button.dart';
+import 'package:todo/cores/shared/ui/widgets/buttons/custom_button.dart';
 import 'package:todo/cores/utils/models/functions/navigators.dart';
 
 class ChangeStatusSuccess extends StatelessWidget {

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo/cores/shared/constants/app_colors.dart';
 import 'package:todo/cores/shared/themes/app_text_styles.dart';
 import 'package:todo/features/layout/data/models/values/categories.dart';
-
 import '../../data/models/functions/drop_menu_item.dart';
 
 class TasksFilter extends StatelessWidget {

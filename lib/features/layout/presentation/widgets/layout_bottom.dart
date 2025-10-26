@@ -14,15 +14,15 @@ class LayoutBottom extends StatefulWidget {
 
 int currentIndex = 0 ;
 
-class _LayoutBottomState extends State<LayoutBottom> {
+class _LayoutBottomState extends State<LayoutBottom> with SingleTickerProviderStateMixin{
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-      color: Colors.transparent,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-        height: 70.h,
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+        height: 80.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100.sp),
           color: AppColors.navColor,
@@ -31,8 +31,7 @@ class _LayoutBottomState extends State<LayoutBottom> {
           scrollDirection: Axis.horizontal,
           physics: NeverScrollableScrollPhysics(),
           itemBuilder: (context, index){
-            return showNavItem(
-              context: context,
+            return LayoutNavBarItem(
               index: index,
               currentIndex: currentIndex,
               changeIndex: (){
@@ -43,7 +42,7 @@ class _LayoutBottomState extends State<LayoutBottom> {
               }
             );
           },
-          separatorBuilder: (context, index)=>SizedBox(width: 2.w,),
+          separatorBuilder: (context, index)=>SizedBox(width: 15.w,),
           itemCount: layouts.length,
         ),
       ),

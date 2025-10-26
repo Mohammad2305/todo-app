@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../cores/shared/ui/widgets/custom_input.dart';
-import '../../../../cores/utils/models/functions/show_icon.dart';
+import '../../../../cores/shared/ui/widgets/inputs/auth_input.dart';
+import '../../../../cores/utils/models/functions/switches/show_icon.dart';
 import '../../data/core/models/classes/auth_input_info.dart';
 
 class AuthForm extends StatefulWidget {

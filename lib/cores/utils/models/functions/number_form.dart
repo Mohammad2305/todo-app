@@ -1,4 +1,5 @@
-String numberFormDate(int number){
+
+String twoNumber(int number,){
   if(number<10){
     return "0$number";
   }
@@ -7,7 +8,7 @@ String numberFormDate(int number){
   }
 }
 
-int textToInt(String number){
+int stringToTwoNumbers(String number){
   if(number[0]=="0"){
     return int.tryParse(number)??0;
   }

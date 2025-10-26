@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import '../../../../../cores/utils/models/classes/input_info.dart';
 
@@ -17,4 +18,8 @@ abstract class AddTask {
     hint: "Note",
     validator: FormBuilderValidators.required(),
   );
+
+  static DateTime? chooseDate;
+  static TimeOfDay? startTime;
+  static TimeOfDay? endTime;
 }

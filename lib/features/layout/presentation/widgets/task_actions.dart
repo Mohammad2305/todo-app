@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo/cores/shared/themes/app_text_styles.dart';
 import 'package:todo/features/layout/presentation/widgets/status_change.dart';
-import '../../../../cores/utils/models/functions/dialog_widget.dart';
+import '../../../../cores/utils/models/functions/widgets/dialog_widget.dart';
+import '../../../../cores/utils/models/values/tasks_list.dart';
 import '../../data/models/values/categories.dart';
 
 class TaskActions extends StatefulWidget {
-  const TaskActions({super.key,});
+  final int taskIndex;
+  const TaskActions({super.key, required this.taskIndex,});
 
   @override
   State<TaskActions> createState() => _TaskActionsState();
@@ -39,7 +41,13 @@ class _TaskActionsState extends State<TaskActions> {
               builder: (context)=>dialogWidget(context, StatusChange(
                 onChange: (index){
                   setState(() {
+                    categories[index].tasks?.add(tasks[widget.taskIndex]);
                     superIndex = index;
+                    categories[categories.indexWhere(
+                        (category){
+                          return category.name == tasks[widget.taskIndex].taskStatus;
+                        }
+                    )].tasks?.removeAt(widget.taskIndex);
                   });
                 },
               )),

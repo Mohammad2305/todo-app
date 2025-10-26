@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:todo/cores/shared/themes/app_text_styles.dart';
-
+import '../../../../cores/shared/themes/app_text_styles.dart';
 import '../../data/models/values/categories.dart';
 
-class TasksCategory extends StatelessWidget {
+class TasksCategoryItem extends StatelessWidget {
   final int index;
   final void Function() onTap;
-  const TasksCategory({super.key, required this.index, required this.onTap});
+  const TasksCategoryItem({super.key, required this.index, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +35,14 @@ class TasksCategory extends StatelessWidget {
               spacing: 2.h,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(categories[index].name, style: AppTextStyles.textFtS14FW500Cbt.copyWith(color: Colors.white),),
-                Text("${categories[index].tasks?.length} tasks",  style: AppTextStyles.textFtS12FW400Cbt.copyWith(color: categories[index].textColor),),
+                Text(
+                  categories[index].name,
+                  style: AppTextStyles.textFtS14FW500Cbt.copyWith(color: Colors.white),
+                ),
+                Text(
+                  "${categories[index].tasks?.length} tasks",
+                  style: AppTextStyles.textFtS12FW500Cmc.copyWith(color: categories[index].textColor),
+                ),
               ],
             )
           ],

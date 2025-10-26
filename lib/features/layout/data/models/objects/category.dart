@@ -5,7 +5,16 @@ import 'package:todo/cores/utils/models/classes/task_info.dart';
 import '../classes/tasks_categories.dart';
 
 
-List<TaskMainInfo> newTasksList = [] ;
+List<TaskMainInfo> newTasksList = [
+  TaskMainInfo(
+    name: "Mohammed Nasser",
+    description: "Flutter programmer",
+    dateTime: DateTime(2025, 10, 18),
+    startTime: TimeOfDay(hour: 12, minute: 0),
+    endTime: TimeOfDay(hour: 20, minute: 50),
+    taskStatus: "New Tasks",
+  ),
+] ;
 List<TaskMainInfo> inProgressTasksList = [] ;
 List<TaskMainInfo> completedTasksList = [] ;
 List<TaskMainInfo> outdatedTasksList = [] ;
@@ -38,7 +47,7 @@ abstract class AppCategories {
   );
   static TasksCategory outdatedTasks = TasksCategory(
     name: "Out Dated",
-    tasks: newTasksList,
+    tasks: outdatedTasksList,
     icon: SvgPicture.asset(AppAssets.outDatedTasks),
     mainColor: Color(0xffDC4481),
     subColor: Color(0xffE77CA7),

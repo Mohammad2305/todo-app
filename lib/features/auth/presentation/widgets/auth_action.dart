@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../cores/shared/themes/app_boxes_decoration.dart';
 import '../../../../cores/shared/themes/app_text_styles.dart';
-import '../../../../cores/shared/ui/widgets/custom_button.dart';
+import '../../../../cores/shared/ui/widgets/buttons/custom_button.dart';
 
 class AuthAction extends StatelessWidget {
   final void Function() onMainTap;

@@ -8,6 +8,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
   );
 
+  static final textFtS16FW700Cbt = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+  );
+
   static final TextStyle textFt16Fw500Cbt = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,

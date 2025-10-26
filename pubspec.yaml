@@ -43,6 +43,8 @@ dependencies:
   flutter_native_splash: ^2.4.6
   flutter_svg: ^2.2.1
   dio: ^5.9.0
+  responsive_navigation_bar: ^5.0.2
+  flutter_bloc: ^9.1.1
 
 
 dev_dependencies:

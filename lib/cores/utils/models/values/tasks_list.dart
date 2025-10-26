@@ -1,13 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:todo/features/layout/data/models/values/categories.dart';
 import '../classes/task_info.dart';
 
 List<TaskMainInfo> tasks = [
-  TaskMainInfo(
-    name: "Mohammed Nasser",
-    description: "Flutter programmer",
-    dateTime: DateTime.now(),
-    startTime: TimeOfDay(hour: 12, minute: 0),
-    endTime: TimeOfDay(hour: 20, minute: 50),
-    taskStatus: "New Tasks",
-  ),
+  ...?categories[0].tasks,
+  ...?categories[1].tasks,
+  ...?categories[2].tasks,
+  ...?categories[3].tasks,
 ];

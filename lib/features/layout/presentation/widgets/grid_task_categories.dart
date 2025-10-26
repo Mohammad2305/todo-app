@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo/cores/utils/routing/routes.dart';
-import 'package:todo/features/auth/presentation/widgets/tasks_category_item.dart';
-import '../../../layout/data/models/values/categories.dart';
+import 'package:todo/features/layout/presentation/widgets/tasks_category_item.dart';
+import '../../data/models/values/categories.dart';
 
-class TaskCategories extends StatelessWidget {
+class GridTaskCategories extends StatelessWidget {
   final int rowItemCount;
-  const TaskCategories({super.key, required this.rowItemCount});
+  const GridTaskCategories({super.key, required this.rowItemCount});
 
   @override
   Widget build(BuildContext context) {

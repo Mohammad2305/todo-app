@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo/cores/shared/constants/app_colors.dart';
 import 'package:todo/cores/shared/themes/app_text_styles.dart';
 import 'package:todo/cores/utils/models/classes/task_info.dart';
-import 'package:todo/cores/utils/models/functions/dates.dart';
+import 'package:todo/cores/utils/models/functions/date_time/dates.dart';
+import 'package:todo/cores/utils/models/functions/date_time/times.dart';
+import 'package:todo/cores/utils/models/functions/date_time/date_state.dart';
 
 class TaskCharacters extends StatelessWidget {
   final List<TaskMainInfo> tasks;
@@ -39,13 +41,13 @@ class TaskCharacters extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              customDateForm(tasks[iterable].dateTime),
+              DateState.dayState(tasks[iterable].dateTime),
               style: AppTextStyles.textFtS12FW500Cmc.copyWith(
                 color: AppColors.textDescriptionColor,
               ),
             ),
             Text(
-              "${customTimeForm(tasks[iterable].startTime)} - ${customTimeForm(tasks[iterable].endTime)}",
+              "${AppTime.customTimeForm(tasks[iterable].startTime)} - ${AppTime.customTimeForm(tasks[iterable].endTime)}",
               style: AppTextStyles.textFtS12FW500Cmc.copyWith(
                 color: AppColors.textDescriptionColor,
               ),

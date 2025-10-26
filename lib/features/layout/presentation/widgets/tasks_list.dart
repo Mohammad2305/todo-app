@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo/cores/shared/themes/app_boxes_decoration.dart';
 import 'package:todo/cores/utils/models/classes/task_info.dart';
-import 'package:todo/features/layout/presentation/widgets/task_actions.dart';
 import 'package:todo/features/layout/presentation/widgets/task_characters.dart';
+import 'task_actions.dart';
 
 class TasksList extends StatelessWidget {
   final ScrollPhysics scrollPhysics;
@@ -15,6 +15,7 @@ class TasksList extends StatelessWidget {
     return ListView.separated(
       physics: scrollPhysics,
       shrinkWrap: true,
+      itemCount: list.length,
       itemBuilder: (context, index){
         return Container(
           decoration: AppBoxDecoration.taskCard,
@@ -23,12 +24,12 @@ class TasksList extends StatelessWidget {
             children: [
               TaskCharacters(tasks: list, iterable: index,),
               Divider(),
-              TaskActions(),
+              TaskActions(taskIndex: index,),
             ],
           ),
         ) ;
       },
       separatorBuilder: (context, index)=>SizedBox(height: 10.h,),
-      itemCount: list.length,
-    );  }
+    );
+  }
 }
